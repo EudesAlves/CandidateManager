@@ -4,4 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="EntityConfig\" />
+    <Folder Include="UnitOfWork\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CM.Domain\CM.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
