@@ -9,7 +9,7 @@ namespace CM.Domain.Entity
 
 		public string Tag { get; set; }
 
-		public IEnumerable<CandidatoHabilidade> CandidatoHabilidades { get; set; }
+		public virtual IEnumerable<CandidatoHabilidade> CandidatoHabilidades { get; set; }
 
 		public DateTime DataCriacao { get; set; }
 	}

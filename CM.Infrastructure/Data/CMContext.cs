@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Extensions;
 using CM.Domain.Entity;
+using CM.Infrastructure.EntityConfig;
 
 namespace CM.Infrastructure.Data
 {
@@ -21,7 +22,12 @@ namespace CM.Infrastructure.Data
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			
+
+			modelBuilder.ApplyConfiguration(new CandidatoConfiguration());
+			modelBuilder.ApplyConfiguration(new HabilidadeConfiguration());
+			modelBuilder.ApplyConfiguration(new CandidatoHabilidadeConfiguration());
+			modelBuilder.ApplyConfiguration(new ContatoConfiguration());
+			base.OnModelCreating(modelBuilder);
 		}
 		
 	}

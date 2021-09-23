@@ -39,7 +39,8 @@ namespace CM.Web
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 			services.AddDbContext<CMContext>(options =>
-				options.UseSqlServer(Configuration.GetConnectionString("CMConnection")));
+				options.UseLazyLoadingProxies()
+				.UseSqlServer(Configuration.GetConnectionString("CMConnection")));
 
 		}
 
