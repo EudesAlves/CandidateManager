@@ -18,7 +18,7 @@ namespace CM.Domain.Entity
 
 		public int CandidatoId { get; set; }
 
-		public Candidato Candidato { get; set; }
+		public virtual Candidato Candidato { get; set; }
 
 		public DateTime DataCriacao { get; set; }
 	}

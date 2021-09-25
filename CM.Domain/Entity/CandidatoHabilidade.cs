@@ -10,10 +10,10 @@ namespace CM.Domain.Entity
 
 		public int CandidatoId { get; set; }
 
-		public Candidato Candidato { get; set; }
+		public virtual Candidato Candidato { get; set; }
 
 		public int HabilidadeId { get; set; }
 
-		public Habilidade Habilidade { get; set; }
+		public virtual Habilidade Habilidade { get; set; }
 	}
 }
