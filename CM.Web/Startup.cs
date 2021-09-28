@@ -13,6 +13,12 @@ using CM.Domain;
 using CM.Infrastructure;
 using CM.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using CM.Domain.Interface.Service;
+using CM.Domain.Interface.Repository;
+using CM.Domain.Interface.UnitOfWork;
+using CM.Domain.Service;
+using CM.Infrastructure.Repository;
+using CM.Infrastructure.UnitOfWork;
 
 namespace CM.Web
 {
@@ -42,6 +48,17 @@ namespace CM.Web
 				options.UseLazyLoadingProxies()
 				.UseSqlServer(Configuration.GetConnectionString("CMConnection")));
 
+			services.AddTransient<ICandidatoService, CandidatoService>();
+			services.AddTransient<IContatoService, ContatoService>();
+			services.AddTransient<IHabilidadeService, HabilidadeService>();
+			services.AddTransient<ICandidatoHabilidadeService, CandidatoHabilidadeService>();
+
+			services.AddTransient<ICandidatoRepository, CandidatoRepository>();
+			services.AddTransient<IContatoRepository, ContatoRepository>();
+			services.AddTransient<IHabilidadeRepository, HabilidadeRepository>();
+			services.AddTransient<ICandidatoHabilidadeRepository, CandidatoHabilidadeRepository>();
+
+			services.AddTransient<IUnitOfWork, UnitOfWork>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

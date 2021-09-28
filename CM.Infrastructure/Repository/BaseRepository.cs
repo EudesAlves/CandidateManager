@@ -22,7 +22,7 @@ namespace CM.Infrastructure.Repository
 		public void Add(TEntity entity)
 		{
 			_dbSet.Add(entity);
-			_context.SaveChanges();
+			//_context.SaveChanges();
 		}
 
 		public IEnumerable<TEntity> GetAll()
